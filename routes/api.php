@@ -27,7 +27,7 @@ Route::group(['middleware' => 'cors'], function (){
 
         Route::group( ['middleware' => 'auth:user-api' ],function(){
 
-            Route::put('/update/{id}', [StaffController::class, 'update']);
+            Route::put('/update', [StaffController::class, 'update']);
             Route::get('/getall', [StaffController::class, 'index']);
          	Route::get('/getone/{id}', [StaffController::class, 'show']);
             Route::delete('/delete/{id}',[StaffController::class, 'destroy']);
@@ -37,7 +37,7 @@ Route::group(['middleware' => 'cors'], function (){
 
         Route::group( ['middleware' => 'auth:user-api' ],function(){
 
-            Route::put('/update', [DepartmentController::class, 'update']);
+            Route::put('/update/{id}', [DepartmentController::class, 'update']);
             Route::get('/getall', [DepartmentController::class, 'index']);
             Route::get('/getone/{id}', [DepartmentController::class, 'show']);
          	Route::post('/create', [DepartmentController::class, 'store']);
