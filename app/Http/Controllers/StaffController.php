@@ -81,8 +81,8 @@ class StaffController extends Controller
 
             $result = $this->app->handle($request);
 
-            $result = json_decode($result->getContent(), true);
-            $response['token'] = $result['access_token'];
+            return $result = json_decode($result->getContent(), true);
+           $response['token'] = $result['access_token'];
             $response['refresh_token'] = $result['refresh_token'];
 
             $clientName = auth()->guard('user')->user()->first_name.' '.auth()->guard('user')->user()->last_name;
