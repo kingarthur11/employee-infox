@@ -92,20 +92,6 @@ class DepartmentController extends Controller
             ]);
         }
 
-        // $checkStaff = DB::table('user_department')
-        //     ->where([
-        //         ['user_id', '=', $staff->id],
-        //         ['department_id', '=', $input['department_id']]
-        //     ])
-        //     ->get();
-
-        // if($checkStaff) {
-        //     return response()->json([
-        //         'status' => 'failure',
-        //         'staff' => 'staff already exist'
-        //     ]);
-        // }
-
         $depart = DB::table('user_department')->insert([
             'department_id' => $input['department_id'],
             'isHead' => $input['isHead'],
