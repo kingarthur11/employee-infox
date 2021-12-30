@@ -105,7 +105,7 @@ class StaffController extends Controller
             'name' => 'required|string|max:255',
             'email' => ['required', 'string', 'max:255'],
             'old_password' => 'required|min:6',
-            'new_password' => 'required|min:6',
+            'password' => 'required|min:6',
             'password_confirmation' => 'required|same:password',
         ]);
         if($validation->fails()){
@@ -116,9 +116,9 @@ class StaffController extends Controller
         $user = User::find($input['user_id']);
 
         if(Hash::check($input['old_password'], $user->password)){
-            $input['new_password'] = Hash::make($input['new_password']);
+            $input['password'] = Hash::make($input['password']);
             User::where('id', $user->id)->update([
-                'password' => $input['new_password'],
+                'password' => $input['password'],
                 'email' => $input['email'],
                 'name' => $input['name'],
               ]);
