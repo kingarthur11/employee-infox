@@ -80,7 +80,7 @@ class StaffController extends Controller
             $request = Request::create('/oauth/token', 'POST', $body);
 
             $result = $this->app->handle($request);
-dd($result);
+            dd($request);
             $result = json_decode($result->getContent(), true);
 
             $response['token'] = $result['access_token'];
