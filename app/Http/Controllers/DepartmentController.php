@@ -38,7 +38,6 @@ class DepartmentController extends Controller
                 'department name' => 'department name already exist please update rather'
             ]);
         }
-
         $depart = Department::create($input);
         return response()->json([
             'status' => 'success',
