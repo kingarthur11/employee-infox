@@ -136,13 +136,13 @@ class StaffController extends Controller
     }
     public function destroy($id)
     {
-        $user = User::find($id);
+        return $user = User::find($id);
         $user->delete();
 
         return response()->json([
            'status' => 'success',
            'user' => 'User Deleted successfully'
-        ], 204);
+        ], 200);
 
     }
 }
