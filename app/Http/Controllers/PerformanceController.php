@@ -23,7 +23,6 @@ class PerformanceController extends Controller
         if($validation->fails()){
             return response()->json(json_decode($validation->errors(), true));
         }
-
         $performance = Performance::create($input);
         return response()->json([
             'status' => 'success',
