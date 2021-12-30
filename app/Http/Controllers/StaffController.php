@@ -136,7 +136,7 @@ class StaffController extends Controller
     }
     public function destroy($id)
     {
-        return $user = User::find($id);
+        $user = User::find($id);
         $user->delete();
 
         return response()->json([
