@@ -108,6 +108,7 @@ class DepartmentController extends Controller
 
         $depart = DB::table('user_department')->insert([
             'department_id' => $input['department_id'],
+            'isHead' => $input['isHead'],
             'user_id' => $staff->id,
         ]);
 
