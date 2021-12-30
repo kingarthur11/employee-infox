@@ -141,7 +141,7 @@ class DepartmentController extends Controller
             ->select(
                 'users.name AS userName',
                 'users.email',
-                'departments.isHead',
+                'user_department.isHead',
                 'departments.name AS departName',
                 )
             ->get();
@@ -164,7 +164,7 @@ class DepartmentController extends Controller
             ->select(
                 'users.name AS userName',
                 'users.email',
-                'departments.isHead',
+                'user_department.isHead',
                 'departments.name AS departName',
                 )
             ->get();
