@@ -41,7 +41,7 @@ Route::group(['middleware' => 'cors'], function (){
             Route::get('/getall', [DepartmentController::class, 'index']);
             Route::get('/getone/{id}', [DepartmentController::class, 'show']);
          	Route::post('/create', [DepartmentController::class, 'store']);
-            Route::delete('/destroy/{id}',[DepartmentController::class, 'destroy']);
+            Route::delete('/delete/{id}',[DepartmentController::class, 'destroy']);
 
             Route::post('/add-staff', [DepartmentController::class, 'addStaff']);
             Route::get('/getall-staffs', [DepartmentController::class, 'getStaffsInDepart']);

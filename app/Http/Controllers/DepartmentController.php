@@ -60,7 +60,7 @@ class DepartmentController extends Controller
         return response()->json([
            'status' => 'success',
            'department' => 'department Deleted'
-        ], 204);
+        ], 200);
     }
 
     public function show($id)
