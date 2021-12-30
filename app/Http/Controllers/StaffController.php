@@ -102,9 +102,10 @@ class StaffController extends Controller
     {
         $input = $request->all();
         $validation = Validator::make($input, [
+            'name' => 'required|string|max:255',
             'email' => ['required', 'string', 'max:255'],
             'old_password' => 'required|min:6',
-            'password' => 'required|min:6',
+            'new_password' => 'required|min:6',
             'password_confirmation' => 'required|same:password',
         ]);
         if($validation->fails()){
@@ -115,10 +116,11 @@ class StaffController extends Controller
         $user = User::find($input['user_id']);
 
         if(Hash::check($input['old_password'], $user->password)){
-            $input['password'] = Hash::make($input['password']);
+            $input['new_password'] = Hash::make($input['new_password']);
             User::where('id', $user->id)->update([
-                'password' => $input['password'],
+                'password' => $input['new_password'],
                 'email' => $input['email'],
+                'name' => $input['name'],
               ]);
             return response()->json([
                 'status' => 'success',
