@@ -57,8 +57,8 @@ Route::group(['middleware' => 'cors'], function (){
             Route::post('/', [PerformanceController::class, 'store']);
             Route::get('/getall-byYear', [PerformanceController::class, 'searchPerfomByYear']);
             Route::get('/getall-byMonth', [PerformanceController::class, 'searchPerfomByMonth']);
-         	Route::get('/getStaff-byYear', [PerformanceController::class, 'searchStaffPerfomByYear']);
-            Route::get('/getStaff-byMonth',[PerformanceController::class, 'searchStaffPerfomByMonth']);
+         	Route::get('/getStaff-byYear/{id}', [PerformanceController::class, 'searchStaffPerfomByYear']);
+            Route::get('/getStaff-byMonth/{id}',[PerformanceController::class, 'searchStaffPerfomByMonth']);
 
         });
     });
