@@ -15,7 +15,7 @@ class DepartmentController extends Controller
 {
     public function index()
     {
-        $department = Department::orderBy('id', 'asc')->latest()->get();
+        $department = Department::orderBy('name')->latest()->get();
         if ($department) {
             return response()->json($department);
         }

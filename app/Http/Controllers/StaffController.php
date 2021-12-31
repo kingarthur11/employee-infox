@@ -78,7 +78,7 @@ class StaffController extends Controller
 
     public function index()
     {
-        $staffs = User::orderBy('id', 'asc')->get();
+        $staffs = User::orderBy('name')->get();
 
         if($staffs){
            return response()->json($staffs);
