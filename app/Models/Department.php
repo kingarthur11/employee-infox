@@ -15,7 +15,7 @@ class Department extends Model
         'description',
     ];
 
-    public function location()
+    public function user()
     {
         return $this->belongsToMany(User::class, 'user_department');
     }
